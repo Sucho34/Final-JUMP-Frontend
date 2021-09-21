@@ -1,5 +1,5 @@
 .bgColor {
-  background-color: rgb(100, 237, 100);
+  background-color: rgb(150, 70, 255);
   position: relative;
   width: 100%;
   height: 100%;
@@ -10,19 +10,6 @@
   height: 100vh;
 }
 
-.col {
-  margin-bottom: 15px;
-}
 
-.App, body {
-  margin-top: 25px;
-}
-
-.album {
-  text-align: center;
-  padding: 15px;
-  background-color: aqua;
-  border-radius: 5px;
-}
 
 

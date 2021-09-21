@@ -4,10 +4,10 @@ import LoginModal from "./LoginModal"
 export default class HomeNavbar extends Component {
     render() {
         return (
-            <div className="navbarStyle">
+            <div>
                 <Navbar className="navbar navbar-dark bg-dark" variant="light" expand="lg">
                  <Container>
-                    <Navbar.Brand className="titleStyle" href="/home">Javadoc Juvenile Reviews</Navbar.Brand>
+                    <Navbar.Brand className="titleStyle" href="/">Javadoc Juvenile Reviews</Navbar.Brand>
                         <Nav className="navStyle">
                             {/* <Nav.Link className="navlinkStyle" href="/home">Home</Nav.Link> */}
                             <Button onClick={LoginModal}>Login</Button>

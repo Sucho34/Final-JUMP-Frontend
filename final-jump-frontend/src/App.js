@@ -5,6 +5,9 @@ import { Grid } from "@mui/material"
 import axios from 'axios';
 import { useEffect } from 'react';
 import { Button } from 'react-bootstrap';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './components/Home';
+import ReviewPage from './components/ReviewPage'
 
 const fetchData = () => {
   const getAllRestaurants = 'http://localhost:8080/api/restaurant';
@@ -27,14 +30,17 @@ const fetchData = () => {
 
 function App() {
   return (
-    <div className="bgColor">
-      <HomeNavbar/>
-      <div>
-        <RestaurantCards/>
-      </div>
-      <div>
-        <Button onClick={fetchData}></Button>
-      </div>
+    <div>
+      <Router>
+        <div className="bgColor">
+          <HomeNavbar/>
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route path="/reviews" component={ReviewPage}/>
+            <Route/>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
