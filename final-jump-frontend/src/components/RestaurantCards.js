@@ -43,19 +43,19 @@ const RestaurantCards = () => {
         return (
             <a style={{cursor: 'pointer'}} onClick={ () => setID(restaurants.id)}>
             <Card className="cardSpacing" style={{ width: '18rem' }} key={index}>
-             <Card.Img variant="top" src={food}/>
+             <Card.Img key="image" variant="top" src={food}/>
               <Card.Body>
-               <Card.Title>{restaurants.name}</Card.Title>
-               <Card.Text>
+               <Card.Title key="name">{restaurants.name}</Card.Title>
+               <Card.Text key="description">
                    {restaurants.description} 
                </Card.Text>
               </Card.Body>
               <ListGroup className="list-group-flush">
-                <ListGroupItem>{restaurants.address}</ListGroupItem>
+                <ListGroupItem key="address">{restaurants.address}</ListGroupItem>
               </ListGroup>
              <Card.Body>
                {/* Will need an on-click function to our Review Modal for review button*/}
-               <Button id={restaurants.id} onClick={console.log(id)}>Reviews</Button>
+               <StarReview/>
              </Card.Body>
             </Card>
             </a>
