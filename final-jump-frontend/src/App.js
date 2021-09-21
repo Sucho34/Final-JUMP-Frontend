@@ -36,7 +36,7 @@ function App() {
           <HomeNavbar/>
           <Switch>
             <Route exact path="/" component={Home}/>
-            <Route path="/reviews" component={ReviewPage}/>
+            <Route path="/reviews/" component={ReviewPage}/>
             <Route/>
           </Switch>
         </div>

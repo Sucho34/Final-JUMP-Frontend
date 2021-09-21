@@ -28,7 +28,12 @@ const RestaurantCards = () => {
     }
 
     const history = useHistory();
-    const onRouteChange= () => history.push('/reviews')
+    const onRouteChange= () => history.push(`/reviews/${id}`)
+
+
+    const grabID = (id) => {
+        return id;
+    }
 
     // const getRestaurantReviews = (restaurantID) => {
     //     axios.get(reviewURL + restaurantID)
@@ -45,7 +50,8 @@ const RestaurantCards = () => {
     
     const renderCard = (restaurants, index) => {
         return (
-            <a style={{cursor: 'pointer'}} onClick={ () => setID(restaurants.id), onRouteChange}>
+            <div className="cardSize">
+            <a style={{cursor: 'pointer'}} onClick={ () => setID(restaurants.id)}>
             <Card className="cardSpacing" style={{ width: '18rem' }} key={index}>
              <Card.Img key="image" variant="top" src={food}/>
               <Card.Body>
@@ -60,9 +66,11 @@ const RestaurantCards = () => {
              <Card.Body>
                {/* Will need an on-click function to our Review Modal for review button*/}
                <StarReview/>
+               <Button onClick={console.log(id)}></Button>
              </Card.Body>
             </Card>
             </a>
+            </div>
         );
     };
     
