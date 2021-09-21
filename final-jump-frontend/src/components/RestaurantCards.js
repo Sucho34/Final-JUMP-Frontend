@@ -51,7 +51,7 @@ const RestaurantCards = () => {
     const renderCard = (restaurants, index) => {
         return (
             <div className="cardSize">
-            <a style={{cursor: 'pointer'}} onClick={ () => setID(restaurants.id)}>
+            <a style={{cursor: 'pointer'}} onClick={ () => setID(restaurants.id), onRouteChange}>
             <Card className="cardSpacing" style={{ width: '18rem' }} key={index}>
              <Card.Img key="image" variant="top" src={food}/>
               <Card.Body>
