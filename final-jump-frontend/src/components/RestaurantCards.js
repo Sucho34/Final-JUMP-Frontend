@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import { Card, Button, ListGroup, ListGroupItem } from "react-bootstrap";
+import { useHistory } from "react-router";
 import food from "../assets/imageTest.jpg"
 import "../CSS/RestaurantCards.css"
 import axios from "axios";
@@ -26,6 +27,9 @@ const RestaurantCards = () => {
         })
     }
 
+    const history = useHistory();
+    const onRouteChange= () => history.push('/reviews')
+
     // const getRestaurantReviews = (restaurantID) => {
     //     axios.get(reviewURL + restaurantID)
     // }
@@ -41,7 +45,7 @@ const RestaurantCards = () => {
     
     const renderCard = (restaurants, index) => {
         return (
-            <a style={{cursor: 'pointer'}} onClick={ () => setID(restaurants.id)}>
+            <a style={{cursor: 'pointer'}} onClick={ () => setID(restaurants.id), onRouteChange}>
             <Card className="cardSpacing" style={{ width: '18rem' }} key={index}>
              <Card.Img key="image" variant="top" src={food}/>
               <Card.Body>

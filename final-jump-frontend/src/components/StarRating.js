@@ -24,8 +24,8 @@ class StarReview extends Component {
                 <StarRatingComponent
                     name="rate1"
                     starCount={5}
-                    editing={false}
-                    value={3}
+                    // editing={false}
+                    value={rating}
                     onStarClick={this.onStarClick.bind(this)}
                     />
             </div>
