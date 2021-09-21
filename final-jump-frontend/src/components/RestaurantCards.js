@@ -9,21 +9,28 @@ import StarReview from "./StarRating";
 
 const RestaurantCards = () => {
     const [restaurantData, setRestaurants] = useState([]);
+    const [id, setID] = useState("");
 
-    const url = "http://localhost:8080/api/restaurant";
+    const restaurantURL = "http://localhost:8080/api/restaurant";
+    const reviewURL = "http://localhost:8080/api/review/restaurant"
 
     useEffect(() => {
         getAllRestaurants();
     }, [])
     
     const getAllRestaurants = () => {
-        axios.get(url)
+        axios.get(restaurantURL)
         .then((response) => {
             const allRestaurants = response.data
             setRestaurants(allRestaurants)
         })
     }
 
+    // const getRestaurantReviews = (restaurantID) => {
+    //     axios.get(reviewURL + restaurantID)
+    // }
+
+    
 
     // const restaurantInfo = [
     //     {name: "Wendy's", description: "The chain is known for its square hamburgers, sea salt fries, and the Frosty, a form of soft-serve ice cream mixed with starches.", address: "1 Dave Thomas Boulevard"},
@@ -34,6 +41,7 @@ const RestaurantCards = () => {
     
     const renderCard = (restaurants, index) => {
         return (
+            <a style={{cursor: 'pointer'}} onClick={ () => setID(restaurants.id)}>
             <Card className="cardSpacing" style={{ width: '18rem' }} key={index}>
              <Card.Img variant="top" src={food}/>
               <Card.Body>
@@ -47,11 +55,13 @@ const RestaurantCards = () => {
               </ListGroup>
              <Card.Body>
                {/* Will need an on-click function to our Review Modal for review button*/}
-               <Button>Review</Button>
+               <Button id={restaurants.id} onClick={console.log(id)}>Reviews</Button>
              </Card.Body>
             </Card>
+            </a>
         );
     };
+    
     
     return <div>{restaurantData.map(renderCard)}</div>
         
