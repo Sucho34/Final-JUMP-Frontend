@@ -4,6 +4,8 @@ import { Card, Button, ListGroup, ListGroupItem } from "react-bootstrap";
 import food from "../assets/imageTest.jpg"
 import "../CSS/RestaurantCards.css"
 import axios from "axios";
+import StarReview from "./StarRating";
+
 
 const RestaurantCards = () => {
     const [restaurantData, setRestaurants] = useState([]);
