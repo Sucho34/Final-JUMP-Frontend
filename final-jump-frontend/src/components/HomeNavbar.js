@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button, Container} from 'react-bootstrap';
-
+import LoginModal from "./LoginModal"
 export default class HomeNavbar extends Component {
     render() {
         return (
@@ -10,7 +10,7 @@ export default class HomeNavbar extends Component {
                     <Navbar.Brand className="titleStyle" href="/home">Javadoc Juvenile Reviews</Navbar.Brand>
                         <Nav className="navStyle">
                             {/* <Nav.Link className="navlinkStyle" href="/home">Home</Nav.Link> */}
-                            <Nav.Link href="/login">Login</Nav.Link>
+                            <Button onClick={LoginModal}>Login</Button>
                         </Nav>
                  </Container>
                 </Navbar>
