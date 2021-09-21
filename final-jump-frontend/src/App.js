@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
-import ReviewPage from './components/ReviewPage
+import ReviewPage from './components/ReviewPage'
 
 
 const fetchData = () => {
