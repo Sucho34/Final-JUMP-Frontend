@@ -13,9 +13,11 @@ const RestaurantCards = () => {
     const [restaurantData, setRestaurants] = useState([]);
     const [id, setID] = useState("");
     const [position, setPosition] = useState("");
+    const history = useHistory();
+    const onRouteChange= () => history.push(`/reviews/` + restaurantData[0].id)
 
     const restaurantURL = "http://localhost:8080/api/restaurant";
-    const reviewURL = "http://localhost:8080/api/review/restaurant/:id"
+    // const reviewURL = "http://localhost:8080/api/review/restaurant/:id"
 
     useEffect(() => {
         getAllRestaurants();
@@ -29,22 +31,7 @@ const RestaurantCards = () => {
             console.log(restaurantData)
         })
     }
-
-    const history = useHistory();
-    const onRouteChange= () => history.push(`/reviews/` + restaurantData[0].id)
-
-
-    const grabID = (id) => {
-        return id;
-    }
-    
-    // const restaurantInfo = [
-    //     {name: "Wendy's", description: "The chain is known for its square hamburgers, sea salt fries, and the Frosty, a form of soft-serve ice cream mixed with starches.", address: "1 Dave Thomas Boulevard"},
-    //     {name: "Chipotle", description: "Chipotle is an American restaurant chain that serves a simple menu of Mexican-inspired food.", address: "United States, California, Newport Beach, Newport Center Dr"},
-    //     {name: "BurgerFi", description: "American fast casual restaurant chain focused on hormone-free and antibiotic-free angus hamburgers, french fries, hot dogs, and custard.", address: "105 US Highway One North Palm Beach, Florida 33408"},
-    //     {name: "McDonald's", description: "McDonald's, in full McDonald's Corporation, American fast-food chain that is one of the largest in the world, known for its hamburgers.", address: "110 North Carpenter Street Chicago, IL 60607"},
-    // ]
-    
+   
     const renderCard = (restaurants, index) => {
         return (
             <div className="restaurant-card-bg">

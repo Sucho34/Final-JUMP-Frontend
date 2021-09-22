@@ -28,19 +28,6 @@ const ReviewPage = () => {
       })
     }
 
-    // const reviews = [
-    //     {name: "Devon", userRating: 4, comment: "Great Food", createdOn: "2021-09-21"},
-    //     {name: "Nick", userRating: 2, comment: "Bad Food", createdOn: "2021-09-20"},
-    //     {name: "Payton", userRating: 3, comment: "Good Food", createdOn: "2021-09-17"},
-    //     {name: "Matt", userRating: 5, comment: "Best Food", createdOn: "2021-09-18"}
-    // ]
-
-    // const getRestaurantReviews = (restaurantID) => {
-    //     axios.get(reviewURL + restaurantID)
-    // }
-
-
-
 
     const renderReviewCard = (review, index) => {
         return (
