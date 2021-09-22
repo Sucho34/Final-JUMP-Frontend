@@ -9,30 +9,10 @@ import ReviewPage from './components/ReviewPage'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-const fetchData = () => {
-  const getAllRestaurants = 'http://localhost:8080/api/restaurant';
-  const getAllUsers = 'http://localhost:8080/api/user';
-
-  const restaurantGet = axios.get(getAllRestaurants)
-  const userGet = axios.get(getAllUsers)
-  axios.all([restaurantGet, userGet]).then(
-    axios.spread((...allData) => {
-      const allRestaurantData = allData[0]
-      const allUserData = allData[1]
-
-      console.log(allRestaurantData)
-      console.log(allUserData)
-    })
-  )
-}
-
-
-
 function App() {
   return (
     <div className="bgColor">
       <Router>
-        
           <HomeNavbar/>
           <Switch>
             <Route exact path="/" component={Home}/>

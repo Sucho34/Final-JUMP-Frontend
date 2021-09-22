@@ -1,10 +1,11 @@
-import React from "react";
+import React, { Grid } from "react";
 import RestaurantCards from "./RestaurantCards";
 
+
 const Home = () => {
-    return <div>
+    return (
         <RestaurantCards/> 
-    </div>
+    )
 }
 
 export default Home;

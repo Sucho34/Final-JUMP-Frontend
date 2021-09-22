@@ -46,7 +46,7 @@ const ReviewPage = () => {
             <button onClick={() => setShow(true) }className="btn-openModal">Write a review</button>
          
                <ReviewModal show={show} close ={closeModalHandler}/>
-               {reviews.map(renderReviewCard)} 
+               <div style={{display: "flex", flexWrap: "wrap"}}>{reviews.map(renderReviewCard)}</div>
           
 
         </div>

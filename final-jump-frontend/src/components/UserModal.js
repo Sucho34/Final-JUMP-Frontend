@@ -1,9 +1,9 @@
 import React, { Component, useState } from "react";
 import { Button, Form, FormControl, FormGroup, FormLabel, FormText, Modal } from "react-bootstrap";
-import '../CSS/LoginModal.css';
+import '../CSS/UserModal.css';
 import axios from "axios";
 
-const LoginModal = ({ show, close }) => {
+const UserModal = ({ show, close }) => {
      const url = "localhost:8080/api/user"
      const [data, setData] = useState({
          name:"",
@@ -36,7 +36,7 @@ const LoginModal = ({ show, close }) => {
     return(
         <Modal show={show} onHide={close} size="lg">
         <Modal.Header>
-          <Modal.Title>Login</Modal.Title>
+          <Modal.Title>Create New Account</Modal.Title>
         </Modal.Header>
         <Modal.Body>
             <Form onSubmit={(e) => submit(e)}>
@@ -76,4 +76,4 @@ const LoginModal = ({ show, close }) => {
     )
 }
 
-export default LoginModal
+export default UserModal
