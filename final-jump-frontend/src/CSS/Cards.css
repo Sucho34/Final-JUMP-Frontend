@@ -43,3 +43,12 @@
   max-width: 400px;
   border-radius: 0;
 }
+
+.star-spacing{
+  margin-left: 130px;
+  transform: scale(1.5);
+}
+
+.card-text-spacing {
+  margin-top: 35px;
+}

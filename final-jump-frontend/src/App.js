@@ -16,7 +16,8 @@ function App() {
           <HomeNavbar/>
           <Switch>
             <Route exact path="/" component={Home}/>
-            <Route path="/reviews" component={ReviewPage}/>
+            <Route path="/reviews/:id" component={ReviewPage}>
+            </Route>
             <Route/>
           </Switch>
       </Router>

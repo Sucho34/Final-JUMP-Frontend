@@ -12,9 +12,10 @@ import StarReview from "./StarReview";
 const RestaurantCards = () => {
     const [restaurantData, setRestaurants] = useState([]);
     const [id, setID] = useState("");
+    const [position, setPosition] = useState("");
 
     const restaurantURL = "http://localhost:8080/api/restaurant";
-    const reviewURL = "http://localhost:8080/api/review/restaurant"
+    const reviewURL = "http://localhost:8080/api/review/restaurant/:id"
 
     useEffect(() => {
         getAllRestaurants();
@@ -25,23 +26,18 @@ const RestaurantCards = () => {
         .then((response) => {
             const allRestaurants = response.data
             setRestaurants(allRestaurants)
+            console.log(restaurantData)
         })
     }
 
     const history = useHistory();
-    const onRouteChange= () => history.push(`/reviews`)
+    const onRouteChange= () => history.push(`/reviews/` + restaurantData[0].id)
 
 
     const grabID = (id) => {
         return id;
     }
-
-    // const getRestaurantReviews = (restaurantID) => {
-    //     axios.get(reviewURL + restaurantID)
-    // }
-
     
-
     // const restaurantInfo = [
     //     {name: "Wendy's", description: "The chain is known for its square hamburgers, sea salt fries, and the Frosty, a form of soft-serve ice cream mixed with starches.", address: "1 Dave Thomas Boulevard"},
     //     {name: "Chipotle", description: "Chipotle is an American restaurant chain that serves a simple menu of Mexican-inspired food.", address: "United States, California, Newport Beach, Newport Center Dr"},

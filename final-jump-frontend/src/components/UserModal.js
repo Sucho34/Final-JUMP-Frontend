@@ -39,7 +39,7 @@ const UserModal = ({ show, close }) => {
           <Modal.Title>Create New Account</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <Form onSubmit={(e) => submit(e)}>
+            <Form onSubmit={submit}>
                 <FormGroup>
                     <FormLabel>Full Name</FormLabel>
                     <FormControl onChange={(e) => handle(e)} id="name" value={data.name} type="text" placeholder="Enter your name" />
@@ -66,7 +66,7 @@ const UserModal = ({ show, close }) => {
           <Button variant="secondary" onClick={close}>
             Close
           </Button>
-          <Button variant="primary" onClick={close}>
+          <Button type= "submit" variant="primary" onClick={close}>
             Submit
           </Button>
         </Modal.Footer>
