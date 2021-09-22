@@ -1,0 +1,41 @@
+.cardSpacing {
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+
+  .cardSize {
+    width: 320px;
+  }
+
+.review-card-bg {
+  width: 100%;
+  height: 100vh;
+}
+
+.buttonPosition {
+  display: flex;
+  justify-content: flex-end;
+  float: right;
+}
+
+.btn-openModal {
+  background-color: rgb(48, 110, 245);
+  color: rgb(255, 255, 255);
+  padding: .5rem 1.8rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.modal-position {
+  margin-bottom: 80%;
+}
+
+.review-card-wrapper {
+  width: 305px;
+  max-width: 400px;
+  border-radius: 0;
+}

@@ -3,9 +3,7 @@ import RestaurantCards from "./RestaurantCards";
 
 const Home = () => {
     return <div>
-        <div>
-        <RestaurantCards/>
-        </div>
+        <RestaurantCards/> 
     </div>
 }
 

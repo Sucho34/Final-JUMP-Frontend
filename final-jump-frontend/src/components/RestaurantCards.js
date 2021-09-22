@@ -3,9 +3,9 @@ import Axios from "axios";
 import { Card, Button, ListGroup, ListGroupItem } from "react-bootstrap";
 import { useHistory } from "react-router";
 import food from "../assets/imageTest.jpg"
-import "../CSS/RestaurantCards.css"
+import "../CSS/Cards.css"
 import axios from "axios";
-import StarReview from "./StarRating";
+import StarReview from "./StarReview";
 
 
 const RestaurantCards = () => {
@@ -28,7 +28,7 @@ const RestaurantCards = () => {
     }
 
     const history = useHistory();
-    const onRouteChange= () => history.push(`/reviews/${id}`)
+    const onRouteChange= () => history.push(`/reviews`)
 
 
     const grabID = (id) => {
